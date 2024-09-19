@@ -39,9 +39,9 @@
                 </div>
 
                 <div>
-                    <div style="text-align:center; font-family: 'Times New Roman', Times, serif; font-size: 20pt; margin-top:10px; font-weight:bold;">
-    <h1>Dimas Habib Rizki-2217051059</h1>
-</div> 
+                    <div style="text-align:center; font-size: 30pt; margin-top:10px; font-weight:bold;">
+                        <h1>Dimas Habib Rizki-2217051059</h1>
+                </div> 
             </div>
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
