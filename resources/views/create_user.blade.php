@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User Form</title>
+    <title>Create User</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,82 +13,75 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #74ebd5, #ACB6E5); 
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Background gradient */
         }
-
-        .form-container {
+        .container {
             background-color: white;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h2 {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 500px;
             text-align: center;
-            margin-bottom: 20px;
+        }
+        h1 {
             color: #333;
             font-size: 24px;
             font-weight: 600;
+            margin-bottom: 20px;
         }
-
         form {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
-
-        label, input {
-            margin-bottom: 15px;
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
         }
-
-        input[type="text"] {
+        input, select {
+            width: 100%;
             padding: 12px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 16px;
-            transition: all 0.3s ease; 
+            transition: all 0.3s ease;
         }
-
-        input[type="text"]:focus {
+        input:focus, select:focus {
             border-color: #28a745;
             box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
             outline: none;
         }
-
-        input[type="text"]:hover {
+        input:hover, select:hover {
             border-color: #999;
         }
-
-        input[type="submit"], button[type="submit"] {
-            padding: 12px;
-            border: none;
+        button {
             background-color: #28a745;
             color: white;
+            padding: 12px;
             font-size: 16px;
             font-weight: 600;
-            cursor: pointer;
+            border: none;
             border-radius: 6px;
-            transition: all 0.3s ease; 
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-
-        input[type="submit"]:hover, button[type="submit"]:hover {
+        button:hover {
             background-color: #218838;
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
-
-        input[type="submit"]:active, button[type="submit"]:active {
-            transform: scale(1); 
+        button:active {
+            transform: scale(1);
         }
-
         /* Responsive Design */
         @media (max-width: 500px) {
-            .form-container {
-                padding: 20px;
+            .container {
                 width: 90%;
+                padding: 20px;
             }
-
-            input[type="text"], input[type="submit"] {
+            input, select, button {
                 font-size: 14px;
                 padding: 10px;
             }
@@ -95,15 +89,26 @@
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Create User</h2>
-        <form action="{{ route('user.store') }}" method="POST">
-            @csrf
-            <input type="text" name="nama" placeholder="Nama" required>
-            <input type="text" name="npm" placeholder="NPM" required>
-            <input type="text" name="kelas" placeholder="Kelas" required>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+<div class="container">
+    <h1>Create User</h1>
+    <form action="/user/store" method="POST">
+        @csrf
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="npm">NPM:</label>
+        <input type="text" id="npm" name="npm" required>
+
+        <label for="kelas_id">Kelas:</label>
+        <select id="kelas_id" name="kelas_id" required>
+            <option value="" disabled selected>Pilih Kelas</option>
+            @foreach($kelas as $kelasItem)
+                <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
+            @endforeach
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
 </body>
 </html>
