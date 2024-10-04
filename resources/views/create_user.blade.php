@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User</title>
+    <title>Create User_PWL</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -88,7 +88,9 @@
         }
     </style>
 </head>
-<body>
+@extends ('layouts.app')
+
+@section('content')
 <div class="container">
     <h1>Create User</h1>
     <form action="/user/store" method="POST">
@@ -110,5 +112,5 @@
         <button type="submit">Submit</button>
     </form>
 </div>
-</body>
+@endsection
 </html>
