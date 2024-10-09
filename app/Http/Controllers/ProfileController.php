@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller{
-    public function profile(){
+    public function profile($nama = "", $kelas = "", $npm = ""){
         $data = [
             'nama' => 'Dimas Habib Rizki',
             'kelas' => 'D',
