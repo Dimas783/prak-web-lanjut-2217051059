@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User_PWL</title>
+    <title>Create User Form</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -17,17 +17,17 @@
         }
         .container {
             background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 500px;
+            padding: 20px; /* Kurangi padding */
+            border-radius: 10px; /* Buat border-radius lebih halus */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Kurangi intensitas bayangan */
+            width: 400px; /* Kurangi lebar kotak */
             text-align: center;
         }
         h1 {
             color: #333;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-size: 22px; /* Kurangi ukuran font untuk tampilan yang lebih halus */
+            font-weight: 500; /* Buat font sedikit lebih ringan */
+            margin-bottom: 15px;
         }
         form {
             display: flex;
@@ -42,12 +42,11 @@
         }
         input, select {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            padding: 10px; /* Kurangi padding input */
+            margin-bottom: 10px; /* Kurangi jarak antar elemen */
+            border: 1px solid #ddd; /* Buat border lebih halus */
+            border-radius: 5px; /* Buat border-radius lebih kecil */
+            font-size: 14px; /* Kurangi ukuran font */
         }
         input:focus, select:focus {
             border-color: #28a745;
@@ -60,11 +59,11 @@
         button {
             background-color: #28a745;
             color: white;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -88,18 +87,20 @@
         }
     </style>
 </head>
-@extends ('layouts.app')
 
-@section('content')
+@extends('layouts.app') 
+@section('content') 
 <div class="container">
-    <h1>Create User</h1>
-    <form action="/user/store" method="POST">
+    <h2>Create User</h2>
+
+    <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+
         <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
+        <input type="text" id="nama" name="nama" placeholder="Nama" required>
 
         <label for="npm">NPM:</label>
-        <input type="text" id="npm" name="npm" required>
+        <input type="text" id="npm" name="npm" placeholder="NPM" required>
 
         <label for="kelas_id">Kelas:</label>
         <select id="kelas_id" name="kelas_id" required>
@@ -109,8 +110,12 @@
             @endforeach
         </select>
 
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto"><br><br>
+
         <button type="submit">Submit</button>
     </form>
 </div>
 @endsection
+
 </html>
