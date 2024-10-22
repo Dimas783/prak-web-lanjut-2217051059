@@ -1,0 +1,70 @@
+/* CSS Halaman Utama (HOME) */
+body{
+    background-color: rgb(16, 218, 221);
+    background-size: cover;
+    background-image: url('pattern.jpg');
+}
+
+h1{
+    font-size: 24px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    display: inline-flex;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.nav1{
+    text-align: right;
+    padding: 10px;
+}
+
+img{
+    border: 2px solid rgb(0, 0, 0);
+    height: 215px;
+    width: 175px;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.kotak{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 60%;
+    top: 50%;
+    height: auto;
+    margin: auto;
+    border-radius: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(160, 234, 236);
+    padding-bottom: 25px;
+}
+
+h2{
+    font-size: 28px;
+}
+
+button{
+    font-size: 16px;
+    border: 2px solid rgb(134, 214, 215);
+    height: auto;
+    width: auto;
+    border-radius: 25px;
+    background-color: rgb(41, 200, 203);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* CSS Bagian Jadwal  */
+.tabel{
+    margin-left: 50px;
+    margin-right: 50px;
+    border: px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+td{
+    background-color: greenyellow;
+}
